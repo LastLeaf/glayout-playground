@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.title {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.controls-row {
+  padding: 5px;
+  font-size: 14px;
+}
+.controls-title {
+  padding: 0 10px;
+  color: #006080;
+}
+.controls-input {
+  box-sizing: border-box;
+  border: 1px solid grey;
+  padding: 2px;
+  width: 100%;
+}
+.controls-button {
+  font-size: 16px;
+  padding: 5px;
+}
+
+.canvas-wrapper {
+  padding: 0 5px;
+}
+.canvas {
+  border: 1px solid grey;
+}
+
+.introduction {
+  font-size: 14px;
+  padding: 10px;
+}

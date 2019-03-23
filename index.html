@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>glayout Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+  <div class="title">glayout HTML Playground</div>
+
+  <div class="controls-row">
+    <div class="controls-title">选择已有示例</div>
+    <select id="example-select" class="controls-input"></select>
+  </div>
+  <div class="controls-row">
+    <div class="controls-title">HTML （支持 div span img）</div>
+    <textarea id="html-input" class="controls-input" rows="4"></textarea>
+  </div>
+  <div class="controls-row">
+    <div class="controls-title">CSS （支持的选择器和样式见底部的说明）</div>
+    <textarea id="css-input" class="controls-input" rows="4"></textarea>
+  </div>
+  <div class="controls-row">
+    <input id="run" type="button" class="controls-button" value="运行 >"></input>
+  </div>
+
+  <div class="canvas-wrapper">
+    <canvas class="canvas" glayout="0" width="640" height="360"></canvas>
+  </div>
+
+  <div class="introduction">
+    <p style="font-weight: bold; color: #0080c0">这不是一个普通的 HTML Playground 。使用 F12 ，你会发现 HTML 内容是画在一块 Canvas 上的！</p>
+    <p>这里使用了 <a href="https://github.com/LastLeaf/glayout">glayout</a> 进行 2D 界面排版绘制，它是一个 rust / WebAssembly 库，在浏览器中基于 WebGL 绘制。<a href="https://github.com/LastLeaf/glayout">去 GitHub ！</a></p>
+    <p>目前支持的 HTML 标签：</p>
+    <p><ul>
+      <li>div</li>
+      <li>span</li>
+      <li>img src="URL"</li>
+    </ul></p>
+    <p>目前支持的 CSS 选择器：</p>
+    <p><ul>
+      <li>class 选择器</li>
+      <li>ID 选择器</li>
+      <li>标签名选择器</li>
+    </ul></p>
+    <p>目前支持的 CSS 样式：</p>
+    <p><ul>
+      <li>display（可用值 block inline，和有限的 flex inline-block）</li>
+      <li>box_sizing width height（长度单位支持 px in cm mm em vw vh 百分比和微信小程序风格的 rpx）</li>
+      <li>position（可用值 static relative absolute）</li>
+      <li>top right bottom left</li>
+      <li>各个方向的 margin border padding</li>
+      <li>flex（有限的 flex-grow flex-shrink）</li>
+      <li>font font-family font-size line-height text-align</li>
+      <li>opacity color background-color</li>
+    </ul></p>
+  </div>
+
+  <script src="../glayout/bin/glayout.js"></script>
+  <script>
+    __glayoutLib__.setLogLevelNum(-1);
+  </script>
+  <script src="index.js"></script>
+  <script src="examples.js"></script>
+</body>
