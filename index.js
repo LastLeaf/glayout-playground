@@ -15,7 +15,7 @@
   const canvas = new glayout.Canvas(0)
   const context = canvas.getContext()
   context.setClearColor(1, 1, 1, 1)
-  context.setCanvasSize(640, 360, 1)
+  context.setCanvasSize(640, 360, window.devicePixelRatio)
   const rootNode = context.getRootNode()
   let bodyNode = context.createElement('empty', 'body')
   rootNode.appendChild(bodyNode)
