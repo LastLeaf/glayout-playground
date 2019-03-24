@@ -41,11 +41,29 @@
 
   addExample({
     name: 'absolute',
-    html: `<div>
+    html: `<div style="position: relative">
     <div>static</div>
-    <div style="position: absolute; top: 200px; left: 50px; right: 200px; bottom: 50px; background: yellow">absolute</div>
+    <div id="abs">absolute</div>
 </div>`,
-    css: ''
+    css: `#abs {
+    position: absolute; top: 200px; left: 50px;
+    border: 5px solid blue;
+    background: rgba(0, 0, 255, 0.5);
+}`
+  })
+
+  addExample({
+    name: 'flex',
+    html: `<div class="p">
+    <div class="c c1">1</div>
+    <div class="c c2">2</div>
+    <img class="c c3" src="lastleaf.jpg">
+</div>`,
+    css: `.p { display: flex }
+.c { flex: 1; text-align: center }
+.c1 { background: yellow }
+.c2 { background: pink }
+.c3 { flex-grow: 0; height: 50vh; opacity: 0.5 }`
   })
 
 })();
